@@ -10,6 +10,9 @@ async function getFromFunction(){
 
 async function clientGetJoke(){
     await axios.get('https://icanhazdadjoke.com', { headers: { "Accept": "text/plain" } })
-    .then((r) => console.log(r))
-    document.querySelector('#results').innerHTML = r.data;
+    .then((r) => {
+        console.log(r)
+        document.querySelector('#results').innerHTML = r.data;
+    })
+    
 }

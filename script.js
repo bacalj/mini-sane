@@ -1,4 +1,4 @@
-let resultsArea = document.querySelector('#results')
+var resultsArea = document.querySelector('#results')
 let helloendpoint = 'https://mini-sane.netlify.app/.netlify/functions/hello-world'
 
 async function pingTheFunction(){

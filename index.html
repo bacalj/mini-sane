@@ -18,7 +18,7 @@
     <h1>Get Data Through Serverless Function</h1>
 
     <button style="margin-left:100px;" onclick="pingTheFunction()">
-        Do stuff plz async 2
+        Do stuff plz async 3
     </button>
 
     <h2>Results:</h2>
@@ -29,7 +29,7 @@
             const result = await axios.get('https://mini-sane.netlify.app/.netlify/functions/hello-world')
             .then((r) => {
                 console.log(r)
-                document.querySelector('#results').innerHTML = r;
+                document.querySelector('#results').innerHTML = r.data.message;
             }).catch((e)=> console.log(e))
         }
     </script>

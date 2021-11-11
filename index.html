@@ -17,7 +17,7 @@
     <h1>Get Data Through Serverless Function</h1>
 
     <button onclick="pingTheFunction()">
-        Tell Serverless Function to Get Data from API
+        Do stuff
     </button>
 
     <h2>Results:</h2>
@@ -25,7 +25,8 @@
 
     <script>
         function pingTheFunction(){
-            
+            const result = 'foo'
+            document.querySelector('#results').innerHTML = result;
         }
     </script>
 </body>

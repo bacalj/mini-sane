@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trying</title>
     <style>
-        html, div, p, h1, h2 {
+        html, p, h1, h2, div {
             font-family: monospace;
             padding:20px;
+        }
+
+        button {
+            margin-left:20px
+        }
+
+        div {
+            margin-top:20px;
         }
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -18,13 +26,15 @@
 
     <h1>Gettin' Data</h1>
 
-    <button onclick="clientGetJoke()">
-        Get Joke Straight From API
-    </button>
-
-    <button onclick="getFromFunction()">
-        Get From Serverless Function
-    </button>
+    <div class="buttons">
+        <button onclick="clientGetJoke()">
+            Get Joke Straight From API
+        </button>
+    
+        <button onclick="getFromFunction()">
+            Get From Serverless Function
+        </button>
+    </div>
 
     <div id="results">
         <p>Results</p>

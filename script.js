@@ -3,7 +3,7 @@ let helloendpoint = 'https://mini-sane.netlify.app/.netlify/functions/hello-worl
 async function helloWorld(){
     await axios.get(helloendpoint).then((r) => {
         console.log(r)
-        document.querySelector('#results').innerHTML = r;
+        document.querySelector('#results').innerHTML = r.data;
     })
     .catch((e)=> console.log(e))
 }

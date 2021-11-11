@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bacalj/mini-sane#readme",
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "node-fetch": "^3.1.0"
   }
 }

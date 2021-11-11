@@ -3,6 +3,7 @@ const fetch = require("node-fetch");
 const API_ENDPOINT = "https://icanhazdadjoke.com/";
 
 exports.handler = async (event, context) => {
+  console.log('wha?')
   return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
     .then((response) => response.json())
     .then((data) => ({

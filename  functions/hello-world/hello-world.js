@@ -1,6 +1,12 @@
+const { default: axios } = require("axios");
+
 exports.handler = async (event, context) => {
-  return {
-    statusCode: 200,
-    body: "Hello, World"
-  };
+  await axios.get('https://icanhazdadjoke.com', { headers: { "Accept": "text/plain" } })
+    .then((r) => {
+        console.log(r)
+        return {
+          statusCode: 200,
+          body: r
+        };
+  })
 };

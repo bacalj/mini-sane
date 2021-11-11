@@ -1,21 +1,13 @@
-const { default: axios } = require("axios")
+const fetch = require("node-fetch");
 
-const handler = async (event) => {
+const API_ENDPOINT = "https://icanhazdadjoke.com/";
 
-  try {
-
-    let wha = await axios.get('https://icanhazdadjoke.com/')
-    console.log(wha)
-
-    return {
+exports.handler = async (event, context) => {
+  return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
+    .then((response) => response.json())
+    .then((data) => ({
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello did i work?` }),
-    }
-  } 
-  
-  catch (error) {
-    return { statusCode: 500, body: error.toString() }
-  }
-}
-
-module.exports = { handler }
+      body: data.joke,
+    }))
+    .catch((error) => ({ statusCode: 422, body: String(error) }));
+};

@@ -1,16 +1,15 @@
 const { default: axios } = require("axios")
 
 const handler = async (event) => {
-  let response;
 
   try {
 
-    response = await axios.get('https://icanhazdadjoke.com/', { headers: { "Accept": "text/plain" } })
-    const joke = response.data
+    let wha = await axios.get('https://icanhazdadjoke.com/')
+    console.log(wha)
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${joke}` }),
+      body: JSON.stringify({ message: `Hello did i work?` }),
     }
   } 
   

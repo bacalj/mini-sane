@@ -9,5 +9,6 @@ async function helloWorld(){
 }
 
 async function clientGetJoke(){
-    await axios.get('https://icanhazdadjoke.com').then((r) => console.log(r))
+    await axios.get('https://icanhazdadjoke.com', { headers: { "Accept": "text/plain" } })
+    .then((r) => console.log(r))
 }

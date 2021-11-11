@@ -11,6 +11,7 @@
             padding:20px;
         }
     </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 
     <script>
         function pingTheFunction(){
-            const result = fetch('https://mini-sane.netlify.app/.netlify/functions/hello-world')
+            const result = axios.get('https://mini-sane.netlify.app/.netlify/functions/hello-world')
             document.querySelector('#results').innerHTML = result;
         }
     </script>

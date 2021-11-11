@@ -18,16 +18,18 @@
     <h1>Get Data Through Serverless Function</h1>
 
     <button style="margin-left:100px;" onclick="pingTheFunction()">
-        Do stuff plz
+        Do stuff plz async
     </button>
 
     <h2>Results:</h2>
     <pre id="results"></pre>
 
     <script>
-        function pingTheFunction(){
-            const result = axios.get('https://mini-sane.netlify.app/.netlify/functions/hello-world')
-            document.querySelector('#results').innerHTML = result;
+        async function pingTheFunction(){
+            const result = await axios.get('https://mini-sane.netlify.app/.netlify/functions/hello-world')
+            .then((r) => {
+                document.querySelector('#results').innerHTML = r;
+            }).catch((e)=> console.log(e))
         }
     </script>
 </body>

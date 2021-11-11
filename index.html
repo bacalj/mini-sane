@@ -12,26 +12,19 @@
         }
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 
     <h1>Get Data Through Serverless Function</h1>
 
-    <button style="margin-left:100px;" onclick="pingTheFunction()">
-        Do stuff plz async 3
+    <button onclick="pingTheFunction()">
+        Do stuff plz other file
     </button>
 
     <h2>Results:</h2>
-    <pre id="results"></pre>
 
-    <script>
-        async function pingTheFunction(){
-            const result = await axios.get('https://mini-sane.netlify.app/.netlify/functions/hello-world')
-            .then((r) => {
-                console.log(r)
-                document.querySelector('#results').innerHTML = r.data.message;
-            }).catch((e)=> console.log(e))
-        }
-    </script>
+    <pre style="background-color: lightcyan; margin-left: 70px;" id="results"></pre>
+
 </body>
 </html>
